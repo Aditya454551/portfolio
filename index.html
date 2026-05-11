@@ -286,14 +286,21 @@
         width: 120px;
         height: 120px;
         border-radius: 50%;
-        background: var(--gradient);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 40px;
-        font-weight: bold;
         position: relative;
         margin-bottom: 25px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        position: relative;
+        z-index: 2;
       }
 
       /* ================= RIPPLE RINGS ================= */
@@ -305,19 +312,19 @@
         animation: ripple 3s infinite;
       }
 
-      .ripple:nth-child(1) {
+      .ripple:nth-child(2) {
         width: 150px;
         height: 150px;
         animation-delay: 0s;
       }
 
-      .ripple:nth-child(2) {
+      .ripple:nth-child(3) {
         width: 180px;
         height: 180px;
         animation-delay: 1s;
       }
 
-      .ripple:nth-child(3) {
+      .ripple:nth-child(4) {
         width: 210px;
         height: 210px;
         animation-delay: 2s;
@@ -671,7 +678,7 @@
 
             <div class="card-content">
               <div class="avatar">
-                AR
+                <img src="profile.png" alt="Aditya Raj" />
 
                 <div class="ripple"></div>
                 <div class="ripple"></div>
@@ -791,8 +798,7 @@
 
             <p>
               Full stack room booking platform built with HTML, CSS, JavaScript,
-              Node.js, Express.js and MongoDB with room listing, booking system,
-              backend APIs and responsive UI.
+              Node.js, Express.js and MongoDB.
             </p>
           </div>
 
@@ -801,8 +807,7 @@
 
             <p>
               Developed scalable RESTful APIs using Express.js and MongoDB
-              implementing CRUD operations, authentication concepts and database
-              optimization techniques.
+              implementing CRUD operations.
             </p>
           </div>
 
@@ -811,8 +816,7 @@
 
             <p>
               Designed modern responsive interfaces using pure HTML, CSS and
-              JavaScript with animations, accessibility improvements and
-              performance optimization.
+              JavaScript with animations.
             </p>
           </div>
         </div>
@@ -971,7 +975,6 @@
             if (entry.isIntersecting) {
               entry.target.classList.add("active");
 
-              // Skill bars animation
               const bars = entry.target.querySelectorAll(".skill-progress");
 
               bars.forEach((bar) => {
